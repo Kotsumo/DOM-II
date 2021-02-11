@@ -10,8 +10,11 @@ document.addEventListener("mouseover", function (event) {
 }, false);
 
 // keydown
+const introColor = document.querySelector('.main-navigation')
+
 document.addEventListener('keydown', function (event) {
     if(event.key === 'Escape'){
+         introColor.style.color = 'green';
     }
 })
 
@@ -35,9 +38,18 @@ window.addEventListener('scroll', function(e) {
         ticking = true;
     }
 });
+
 // load
+window.addEventListener('load', () => {
+    console.log('page is fully loaded')
+})
 
 // focus
+focusMethod = function getFocus() {
+    document.querySelector('.btn').focus();
+}
+
+console.log(focusMethod('focusing'))
 
 // resize
 
@@ -45,12 +57,20 @@ window.addEventListener('scroll', function(e) {
 
 // select
 
+
 // dblclick
+const funbusClicky = document.querySelector('.text-content')
 
-const funbusClicky = document.querySelector('.main_navigation')
+document.addEventListener('dblclick', function () {
+    funbusClicky.style.color = 'red';
+})
+console.log(funbusClicky)
 
-funbusClicky.addEventListener('dblclick', function (event) {
-    funbusClicky.setAttribute.color = 'green';
+// onclick
+const mainNav = document.querySelector('.main-navigation')
+
+document.addEventListener('click', (event) => {
+    mainNav.style.color = 'yellow'
 })
 
-// drag/drop
+console.log('we clicked!')
